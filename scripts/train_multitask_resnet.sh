@@ -1,0 +1,21 @@
+# activate environment
+python src/train_multitask.py \
+--name=multitask_resnet \
+--seed=1 \
+--train=data/train.tsv \
+--dev=data/dev.tsv \
+--test=data/test.tsv \
+--out-file=out/results.json \
+--data-dir=data/images \
+--best-state-path=models/best.pth \
+--fig-dir=out/figures \
+--checkpoint-dir=out/models \
+--arch=resnet18 \
+--batch-size=32 \
+--learning-rate=1e-5 \
+--weight-decay=0 \
+--num-epochs=50 \
+--use-rand-augment=False \
+--rand-augment-n=2 \
+--rand-augment-m=9 \
+--task-names='damage_severity,informative,humanitarian,disaster_types'
